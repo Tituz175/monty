@@ -60,8 +60,6 @@ typedef struct file_s
 extern file_t file_parameters;
 
 void free_stack(stack_t *head);
-int run_command(char *command_line, stack_t **stack,
-		unsigned int counter, FILE *file_ptr);
 void addnode(stack_t **head, int n);
 void monty_push(stack_t **head, unsigned int counter);
 void monty_pall(stack_t **head, unsigned int counter);
