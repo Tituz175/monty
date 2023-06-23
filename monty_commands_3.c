@@ -143,13 +143,22 @@ void monty_rotr(stack_t **head, unsigned int counter)
 	stack_t *temp, *current = *head;
 	(void) counter;
 
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return;
+	}
+
 	while (current->next)
+	{
 		current = current->next;
+	}
 
+	temp = current->prev;
+	temp->next = NULL;
 
-	temp = (*head)->next;
+	current->prev = NULL;
 	current->next = (*head);
 	(*head)->prev = current;
-	(*head)->next = NULL;
-	*head = temp;
+
+	*head = current;
 }
