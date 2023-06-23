@@ -35,8 +35,8 @@ void monty_mod(stack_t **head, unsigned int counter)
 		else
 		{
 			temp = current->next;
-			value1 = current->n;
-			value2 = temp->n;
+			value2 = current->n;
+			value1 = temp->n;
 			temp->n = value2 % value1;
 			*head = temp;
 			free(current);
