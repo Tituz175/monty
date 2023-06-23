@@ -10,9 +10,9 @@
 
 void monty_mod(stack_t **head, unsigned int counter)
 {
-	stack_t *current = *head;
+	/*stack_t *current = *head;*/
 
-	if (current == NULL || current->next == NULL)
+	if ((*head) == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
 		fclose(file_parameters.file);
@@ -22,7 +22,7 @@ void monty_mod(stack_t **head, unsigned int counter)
 	}
 	else
 	{
-		if (current->n == 0)
+		if ((*head)->next->n == 0)
 		{
 			fprintf(stderr, "L%d: division by zero\n", counter);
 			fclose(file_parameters.file);
@@ -33,7 +33,7 @@ void monty_mod(stack_t **head, unsigned int counter)
 		}
 		else
 		{
-			current->next->next->n %= current->next->n;
+			(*head)->next->next->n %= (*head)->next->n;
 			monty_pop(head, counter);
 		}
 	}
