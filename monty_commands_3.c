@@ -66,7 +66,7 @@ void monty_pchar(stack_t **head, unsigned int counter)
 	}
 	else
 	{
-		if (current->n < 33 || current->n > 127)
+		if (current->n < 0 || current->n > 127)
 		{
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", counter);
 			fclose(file_parameters.file);
