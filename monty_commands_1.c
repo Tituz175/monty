@@ -78,7 +78,7 @@ void monty_pall(stack_t **head, unsigned int counter)
 /**
  * monty_pint -> this function prints the top value of a linked list
  * @head: the head of the linked list
- * @counter: unuse parameter
+ * @counter: the current line in the given file
  * Return: void
  */
 
@@ -105,7 +105,7 @@ void monty_pint(stack_t **head, unsigned int counter)
 /**
  * monty_pop -> this function prints the element at the top of a linked list
  * @head: the head of the linked list
- * @counter: unuse parameter
+ * @counter: the current line in the given file
  * Return: void
  */
 
@@ -133,7 +133,7 @@ void monty_pop(stack_t **head, unsigned int counter)
 /**
  * monty_swap -> swaps the top two elements of the stack
  * @head: the head of the linked list
- * @counter: unuse parameter
+ * @counter: the current line in the given file
  * Return: void
  */
 
