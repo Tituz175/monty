@@ -76,7 +76,8 @@ int run_command(char *command_line, stack_t **stack,
 		{"pop", monty_pop}, {"swap", monty_swap}, {"add", monty_add},
 		{"nop", monty_nop}, {"sub", monty_sub}, {"div", monty_div},
 		{"mul", monty_mul}, {"pchar", monty_pchar}, {"pstr", monty_pstr},
-		{"rotl", monty_rotl}, {"rotr", monty_rotr},
+		{"rotl", monty_rotl}, {"rotr", monty_rotr}, {"queue", monty_queue},
+		{"stack", monty_stack},
 		{NULL, NULL}
 	};
 
