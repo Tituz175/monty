@@ -10,8 +10,7 @@
 
 void monty_mod(stack_t **head, unsigned int counter)
 {
-	stack_t *temp, *current = *head;
-	int value1, value2;
+	stack_t *current = *head;
 
 	if (current == NULL || current->next == NULL)
 	{
@@ -34,12 +33,8 @@ void monty_mod(stack_t **head, unsigned int counter)
 		}
 		else
 		{
-			temp = current->next;
-			value2 = current->n;
-			value1 = temp->n;
-			temp->n = value2 % value1;
-			*head = temp;
-			free(current);
+			current->next->next->n %= current->next->n;
+			monty_pop(head, counter);
 		}
 	}
 }
