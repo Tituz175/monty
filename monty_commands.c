@@ -100,3 +100,32 @@ void monty_pint(stack_t **head, unsigned int counter)
 		printf("%d\n", current->n);
 
 }
+
+
+/**
+ * monty_pop -> this function prints the element at the top of a linked list
+ * @head: the head of the linked list
+ * @counter: unuse parameter
+ * Return: void
+ */
+
+void monty_pop(stack_t **head, unsigned int counter)
+{
+	stack_t *current;
+
+	current = *head;
+
+	if (!current)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
+		fclose(file_parameters.file);
+		free(file_parameters.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		*head = current->next;
+		free(current);
+	}
+}

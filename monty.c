@@ -75,6 +75,7 @@ int run_command(char *command_line, stack_t **stack,
 		{"push", monty_push},
 		{"pall", monty_pall},
 		{"pint", monty_pint},
+		{"pop", monty_pop},
 		{NULL, NULL}
 	};
 
@@ -96,7 +97,6 @@ int run_command(char *command_line, stack_t **stack,
 
 	if (command_token && !monty_commands[index].opcode)
 	{
-		printf("In run_command\n");
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, command_token);
 		fclose(file_ptr);
 		free(command_line);

@@ -64,5 +64,6 @@ void addnode(stack_t **head, int n);
 void monty_push(stack_t **head, unsigned int counter);
 void monty_pall(stack_t **head, unsigned int counter);
 void monty_pint(stack_t **head, unsigned int counter);
+void monty_pop(stack_t **head, unsigned int counter);
 
 #endif
