@@ -77,6 +77,7 @@ int run_command(char *command_line, stack_t **stack,
 		{"pint", monty_pint},
 		{"pop", monty_pop},
 		{"swap", monty_swap},
+		{"add", monty_add},
 		{NULL, NULL}
 	};
 
