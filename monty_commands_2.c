@@ -101,11 +101,23 @@ void monty_div(stack_t **head, unsigned int counter)
 	}
 	else
 	{
-		temp = current->next;
-		value1 = current->n;
-		value2 = temp->n;
-		temp->n = value2 / value1;
-		*head = temp;
-		free(current);
+		if (current->n == 0)
+		{
+			fprintf(stderr, "L%d: division by zero\n", counter);
+			fclose(file_parameters.file);
+			free(file_parameters.content);
+			free_stack(*head);
+			exit(EXIT_FAILURE);
+
+		}
+		else
+		{
+			temp = current->next;
+			value1 = current->n;
+			value2 = temp->n;
+			temp->n = value2 / value1;
+			*head = temp;
+			free(current);
+		}
 	}
 }
