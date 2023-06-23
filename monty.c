@@ -74,10 +74,9 @@ int run_command(char *command_line, stack_t **stack,
 	instruction_t monty_commands[] = {
 		{"push", monty_push},
 		{"pall", monty_pall},
+		{"pint", monty_pint},
 		{NULL, NULL}
 	};
-
-
 
 	command_token = strtok(command_line, " \n\t");
 	if (command_token && command_token[0] == '#')

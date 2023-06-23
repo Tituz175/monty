@@ -74,3 +74,29 @@ void monty_pall(stack_t **head, unsigned int counter)
 	}
 
 }
+
+/**
+ * monty_pint -> this function prints the top value of a linked list
+ * @head: the head of the linked list
+ * @counter: unuse parameter
+ * Return: void
+ */
+
+void monty_pint(stack_t **head, unsigned int counter)
+{
+	stack_t *current;
+
+	current = *head;
+
+	if (!current)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", counter);
+		fclose(file_parameters.file);
+		free(file_parameters.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	else
+		printf("%d\n", current->n);
+
+}
