@@ -72,15 +72,11 @@ int run_command(char *command_line, stack_t **stack,
 	char *command_token;
 
 	instruction_t monty_commands[] = {
-		{"push", monty_push},
-		{"pall", monty_pall},
-		{"pint", monty_pint},
-		{"pop", monty_pop},
-		{"swap", monty_swap},
-		{"add", monty_add},
-		{"nop", monty_nop},
-		{"sub", monty_sub},
-		{"div", monty_div},
+		{"push", monty_push}, {"pall", monty_pall},
+		{"pint", monty_pint}, {"pop", monty_pop},
+		{"swap", monty_swap}, {"add", monty_add},
+		{"nop", monty_nop}, {"sub", monty_sub},
+		{"div", monty_div}, {"mul", monty_mul},
 		{NULL, NULL}
 	};
 
@@ -88,7 +84,6 @@ int run_command(char *command_line, stack_t **stack,
 	if (command_token && command_token[0] == '#')
 		return (0);
 	file_parameters.command = strtok(NULL, " \n\t");
-
 
 	while (monty_commands[index].opcode && command_token)
 	{
