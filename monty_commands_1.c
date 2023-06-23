@@ -45,9 +45,9 @@ void monty_push(stack_t **head, unsigned int counter)
 
 	number = atoi(file_parameters.command);
 	if (file_parameters.flag == 0)
-	{
 		addnode(head, number);
-	}
+	else
+		addqueue(head, number);
 }
 
 /**

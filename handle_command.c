@@ -32,3 +32,39 @@ void addnode(stack_t **head, int n)
 		*head = new_node;
 	}
 }
+
+/**
+ * addqueue -> adds a new node at the end
+ * of a dlistint_t list
+ *
+ * @head: head of the list
+ * @n: value of the element
+ * Return: the address of the new element
+ */
+void addqueue(stack_t **head, int n)
+{
+	stack_t *new, *temp = *head;
+
+	new = malloc(sizeof(stack_t));
+
+	if (new == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+
+	new->n = n;
+	new->next = NULL;
+	new->prev = NULL;
+
+	if (temp == NULL)
+		*head = new;
+	else
+	{
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new;
+		new->prev = temp;
+	}
+}
+

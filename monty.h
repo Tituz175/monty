@@ -61,6 +61,7 @@ extern file_t file_parameters;
 
 void free_stack(stack_t *head);
 void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
 void monty_push(stack_t **head, unsigned int counter);
 void monty_pall(stack_t **head, unsigned int counter);
 void monty_pint(stack_t **head, unsigned int counter);
@@ -75,5 +76,7 @@ void monty_pchar(stack_t **head, unsigned int counter);
 void monty_pstr(stack_t **head, unsigned int counter);
 void monty_rotl(stack_t **head, unsigned int counter);
 void monty_rotr(stack_t **head, unsigned int counter);
+void monty_stack(stack_t **head, unsigned int counter);
+void monty_queue(stack_t **head, unsigned int counter);
 
 #endif
