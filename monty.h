@@ -74,5 +74,6 @@ void monty_mul(stack_t **head, unsigned int counter);
 void monty_pchar(stack_t **head, unsigned int counter);
 void monty_pstr(stack_t **head, unsigned int counter);
 void monty_rotl(stack_t **head, unsigned int counter);
+void monty_rotr(stack_t **head, unsigned int counter);
 
 #endif

@@ -113,6 +113,36 @@ void monty_rotl(stack_t **head, unsigned int counter)
 	stack_t *temp, *current = *head;
 	(void) counter;
 
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return;
+	}
+
+	while (current->next)
+	{
+		current = current->next;
+	}
+
+	temp = (*head)->next;
+	temp->prev = NULL;
+	current->next = (*head);
+	(*head)->prev = current;
+	(*head)->next = NULL;
+	(*head) = temp;
+}
+
+/**
+ * monty_rotr -> rotates the stack to the bottom.
+ * @head: the head of the linked list
+ * @counter: the current line in the given file
+ * Return: void
+ */
+
+void monty_rotr(stack_t **head, unsigned int counter)
+{
+	stack_t *temp, *current = *head;
+	(void) counter;
+
 	while (current->next)
 		current = current->next;
 
