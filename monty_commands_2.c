@@ -32,3 +32,16 @@ void monty_add(stack_t **head, unsigned int counter)
 		free(current);
 	}
 }
+
+/**
+ * monty_nop -> just here for no reason
+ * @head: the head of the linked list
+ * @counter: unuse parameter
+ * Return: void
+ */
+
+void monty_nop(stack_t **head, unsigned int counter)
+{
+	(void)counter;
+	(void)head;
+}

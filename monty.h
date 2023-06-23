@@ -67,5 +67,6 @@ void monty_pint(stack_t **head, unsigned int counter);
 void monty_pop(stack_t **head, unsigned int counter);
 void monty_swap(stack_t **head, unsigned int counter);
 void monty_add(stack_t **head, unsigned int counter);
+void monty_nop(stack_t **head, unsigned int counter);
 
 #endif
