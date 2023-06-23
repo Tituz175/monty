@@ -80,6 +80,7 @@ int run_command(char *command_line, stack_t **stack,
 		{"add", monty_add},
 		{"nop", monty_nop},
 		{"sub", monty_sub},
+		{"div", monty_div},
 		{NULL, NULL}
 	};
 
