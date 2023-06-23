@@ -61,7 +61,7 @@ void monty_sub(stack_t **head, unsigned int counter)
 
 	if (current == NULL || current->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", counter);
 		fclose(file_parameters.file);
 		free(file_parameters.content);
 		free_stack(*head);
