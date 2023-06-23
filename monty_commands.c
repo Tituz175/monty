@@ -129,3 +129,32 @@ void monty_pop(stack_t **head, unsigned int counter)
 		free(current);
 	}
 }
+
+/**
+ * monty_swap -> swaps the top two elements of the stack
+ * @head: the head of the linked list
+ * @counter: unuse parameter
+ * Return: void
+ */
+
+void monty_swap(stack_t **head, unsigned int counter)
+{
+	stack_t *temp, *current = *head;
+	int value;
+
+	if (current == NULL || current->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
+		fclose(file_parameters.file);
+		free(file_parameters.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		temp = current->next;
+		value = current->n;
+		current->n = temp->n;
+		temp->n = value;
+	}
+}
