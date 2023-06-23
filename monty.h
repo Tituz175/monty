@@ -71,5 +71,6 @@ void monty_nop(stack_t **head, unsigned int counter);
 void monty_sub(stack_t **head, unsigned int counter);
 void monty_div(stack_t **head, unsigned int counter);
 void monty_mul(stack_t **head, unsigned int counter);
+void monty_pchar(stack_t **head, unsigned int counter);
 
 #endif
