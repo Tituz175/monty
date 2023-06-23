@@ -100,3 +100,26 @@ void monty_pstr(stack_t **head, unsigned int counter)
 	printf("\n");
 }
 
+
+/**
+ * monty_rotl -> rotates the stack to the top
+ * @head: the head of the linked list
+ * @counter: the current line in the given file
+ * Return: void
+ */
+
+void monty_rotl(stack_t **head, unsigned int counter)
+{
+	stack_t *temp, *current = *head;
+	(void) counter;
+
+	while (current->next)
+		current = current->next;
+
+
+	temp = (*head)->next;
+	current->next = (*head);
+	(*head)->prev = current;
+	(*head)->next = NULL;
+	*head = temp;
+}
