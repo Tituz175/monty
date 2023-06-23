@@ -78,3 +78,25 @@ void monty_pchar(stack_t **head, unsigned int counter)
 			printf("%c\n", current->n);
 	}
 }
+
+/**
+ * monty_pstr -> prints the string starting at the
+ * top of the stack, followed by a new line
+ * @head: the head of the linked list
+ * @counter: the current line in the given file
+ * Return: void
+ */
+
+void monty_pstr(stack_t **head, unsigned int counter)
+{
+	stack_t *current = *head;
+	(void) counter;
+
+	while ((current->n > 0 && current->n <= 127) && current->next != NULL)
+	{
+		printf("%c", current->n);
+		current = current->next;
+	}
+	printf("\n");
+}
+
