@@ -1,7 +1,7 @@
 #include "monty.h"
 
 int run_command(char *command_line, stack_t **stack,
-unsigned int counter, FILE * file_ptr);
+		unsigned int counter, FILE * file_ptr);
 
 file_t file_parameters = {NULL, NULL, NULL, 0};
 
@@ -31,7 +31,7 @@ int main(int ac, char **av)
 
 	if (file_parameters.file == NULL)
 	{
-		fprintf(stderr, "Error: can't open file %s\n", av[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -75,10 +75,9 @@ int run_command(char *command_line, stack_t **stack,
 		{"push", monty_push}, {"pall", monty_pall}, {"pint", monty_pint},
 		{"pop", monty_pop}, {"swap", monty_swap}, {"add", monty_add},
 		{"nop", monty_nop}, {"sub", monty_sub}, {"div", monty_div},
-		{"mul", monty_mul}, {"pchar", monty_pchar}, {"pstr", monty_pstr},
-		{"rotl", monty_rotl}, {"rotr", monty_rotr}, {"queue", monty_queue},
-		{"stack", monty_stack},
-		{NULL, NULL}
+		{"mul", monty_mul}, {"mod", monty_mod}, {"pchar", monty_pchar},
+		{"pstr", monty_pstr}, {"rotl", monty_rotl}, {"rotr", monty_rotr},
+		{"queue", monty_queue}, {"stack", monty_stack}, {NULL, NULL}
 	};
 
 	command_token = strtok(command_line, " \n\t");
@@ -101,7 +100,7 @@ int run_command(char *command_line, stack_t **stack,
 
 	if (command_token && !monty_commands[index].opcode)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", counter, command_token);
+		fprintf(stderr, "L%d: unknownq instruction %s\n", counter, command_token);
 		fclose(file_ptr);
 		free(command_line);
 		free_stack(*stack);
