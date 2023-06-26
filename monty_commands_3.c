@@ -92,14 +92,16 @@ void monty_pstr(stack_t **head, unsigned int counter)
 	stack_t *current = *head;
 	(void) counter;
 
-	if (current == NULL)
+	if (*head == NULL)
 		printf("\n");
 	else
 	{
 
-		while ((current->n > 0 && current->n <= 127) && current->next != NULL)
+		while ((current->n > 0 && current->n <= 127) && current->n)
 		{
 			printf("%c", current->n);
+			if (!current->next)
+				break;
 			current = current->next;
 		}
 		printf("\n");
