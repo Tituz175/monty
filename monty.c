@@ -99,7 +99,7 @@ int run_command(char *command_line, stack_t **stack,
 
 	if (command_token && !monty_commands[index].opcode)
 	{
-		fprintf(stderr, "L%d: unknownq instruction %s\n", counter, command_token);
+		fprintf(stderr, "L%d: unknown instruction %s\n", counter, command_token);
 		fclose(file_ptr);
 		free(command_line);
 		free_stack(*stack);
