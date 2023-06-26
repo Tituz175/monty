@@ -83,7 +83,6 @@ int run_command(char *command_line, stack_t **stack,
 	command_token = strtok(command_line, " \n\t");
 	if (command_token && command_token[0] == '#')
 	{
-		printf("command_token: %s\n", command_token);
 		return (0);
 	}
 	file_parameters.command = strtok(NULL, " \n\t");
