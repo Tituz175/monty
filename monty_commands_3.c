@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * monty_mod -> computes the rest of the division of the second top element of
+ * monty_mod -> .putes the rest of the division of the second top element of
  * the stack by the top element of the stack
  * @head: the head of the linked list
  * @counter: the current line in the given file
@@ -92,12 +92,18 @@ void monty_pstr(stack_t **head, unsigned int counter)
 	stack_t *current = *head;
 	(void) counter;
 
-	while ((current->n > 0 && current->n <= 127) && current->next != NULL)
+	if (current == NULL)
+		printf("\n");
+	else
 	{
-		printf("%c", current->n);
-		current = current->next;
+
+		while ((current->n > 0 && current->n <= 127) && current->next != NULL)
+		{
+			printf("%c", current->n);
+			current = current->next;
+		}
+		printf("\n");
 	}
-	printf("\n");
 }
 
 
